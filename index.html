@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المنصة الأردنية للأعمال الحرة | X</title>
+    <style>
+        /* إعدادات الخطوط والألوان العامة */
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap');
+        
+        :root {
+            --primary-color: #0b2240; /* أزرق داكن فخم */
+            --secondary-color: #ce9e22; /* ذهبي/أصفر ملكي */
+            --text-dark: #333;
+            --text-light: #fff;
+            --bg-light: #f4f7f6;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* الهيدر وشريط التنقل */
+        header {
+            background-color: var(--text-light);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .btn-login {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 8px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn-login:hover {
+            background-color: #16355c;
+        }
+
+        /* القسم الرئيسي (Hero Section) */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1a3a60 100%);
+            color: var(--text-light);
+            padding: 160px 20px 100px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .btn-main {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        .btn-main:hover {
+            background-color: #e0ae2b;
+            transform: translateY(-2px);
+        }
+
+        .btn-sub {
+            background-color: transparent;
+            color: var(--text-light);
+            padding: 12px 30px;
+            border: 2px solid var(--text-light);
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .btn-sub:hover {
+            background-color: var(--text-light);
+            color: var(--primary-color);
+        }
+
+        /* قسم المميزات السريع */
+        .features {
+            max-width: 1200px;
+            margin: -40px auto 60px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 11fr));
+            gap: 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .feature-box {
+            background: var(--text-light);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            border-top: 4px solid var(--secondary-color);
+        }
+
+        .feature-box h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .feature-box p {
+            color: #666;
+            font-size: 15px;
+        }
+
+        /* الفوتر (تذييل الصفحة) */
+        footer {
+            background-color: #07162b;
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            margin-top: 40px;
+        }
+
+        /* التوافق مع الشاشات الصغيرة */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* لإبقاء التصميم بسيطاً مبدئياً على الموبايل */
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .btn-main, .btn-sub {
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- شريط التنقل العلوي -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">موقع <span>X</span></a>
+            <ul class="nav-links">
+                <li><a href="#">الرئيسية</a></li>
+                <li><a href="#">تصفح المشاريع</a></li>
+                <li><a href="#">ابحث عن مستقل</a></li>
+                <li><a href="#">من نحن</a></li>
+            </ul>
+            <a href="#" class="btn-login">دخول / تسجيل</a>
+        </div>
+    </header>
+
+    <!-- القسم الرئيسي للترحيب -->
+    <section class="hero">
+        <h1>المنصة الأردنية للأعمال الحرة</h1>
+        <p>بوابتك الذكية للوصول إلى أفضل الكفاءات والمهارات الأردنية، أو للانطلاق بمسيرتك المهنية كمستقل في سوق العمل الحر.</p>
+        <div class="cta-buttons">
+            <a href="#" class="btn-main">ابدأ الآن كمستقل</a>
+            <a href="#" class="btn-sub">أضف مشروعاً جديداً</a>
+        </div>
+    </section>
+
+    <!-- قسم المميزات السريعة -->
+    <section class="features">
+        <div class="feature-box">
+            <h3>كفاءات أردنية مميزة</h3>
+            <p>تضم المنصة نخبة من المبرمجين، المصممين، المترجمين، وصنّاع المحتوى الجاهزين لتنفيذ مشاريعك باحترافية.</p>
+        </div>
+        <div class="feature-box">
+            <h3>بيئة آمنة وموثوقة</h3>
+            <p>نضمن لك حقوقك المالية والتعاقدية بشكل كامل خلال كافة مراحل تنفيذ المشروع وحتى التسليم النهائي.</p>
+        </div>
+        <div class="feature-box">
+            <h3>دعم محلي مستمر</h3>
+            <p>فريق دعم فني متكامل متواجد لخدمتك ومساعدتك في إنجاح أعمالك وتسهيل طرق الدفع المحلية والعالمية.</p>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer>
+        <p>&copy; 2026 جميع الحقوق محفوظة - المنصة الأردنية للأعمال الحرة (موقع X)</p>
+    </footer>
+
+</body>
+</html>
