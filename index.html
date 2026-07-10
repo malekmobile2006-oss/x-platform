@@ -6,15 +6,16 @@
     <title>المنصة العربية للأعمال الحرة | X</title>
     <style>
         /* إعدادات الخطوط والألوان العامة */
-        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;700&display=swap');
         
         :root {
             --primary-color: #0b2240; /* أزرق داكن فخم */
             --secondary-color: #ce9e22; /* ذهبي/أصفر ملكي */
-            --text-dark: #222222; /* تم تغميقه لزيادة الوضوح */
-            --text-muted: #444444; /* تم تغميقه ليكون واضحاً جداً في البوكسات */
+            --text-dark: #222222; 
+            --text-muted: #444444; 
             --text-light: #fff;
             --bg-light: #f4f7f6;
+            --bg-white: #ffffff;
         }
 
         * {
@@ -22,17 +23,18 @@
             margin: 0;
             padding: 0;
             font-family: 'Cairo', sans-serif;
+            scroll-behavior: smooth; /* جعل النزول بالسكرول ناعم وانسيابي */
         }
 
         body {
             background-color: var(--bg-light);
             color: var(--text-dark);
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         /* الهيدر وشريط التنقل */
         header {
-            background-color: var(--text-light);
+            background-color: var(--bg-white);
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: fixed;
             width: 100%;
@@ -69,7 +71,7 @@
         .nav-links a {
             text-decoration: none;
             color: var(--text-dark);
-            font-weight: 700; /* تم زيادة السمك ليكون أوضح */
+            font-weight: 700; 
             transition: color 0.3s;
         }
 
@@ -153,7 +155,7 @@
             color: var(--primary-color);
         }
 
-        /* قسم المميزات السريع */
+        /* قسم المميزات السريع الأول */
         .features {
             max-width: 1200px;
             margin: -40px auto 60px auto;
@@ -169,7 +171,7 @@
             background: var(--text-light);
             padding: 30px;
             border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* تم زيادة الظل قليلاً للبروز */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
             text-align: center;
             border-top: 4px solid var(--secondary-color);
         }
@@ -182,9 +184,134 @@
         }
 
         .feature-box p {
-            color: var(--text-muted); /* أصبح اللون هنا غامقاً وواضحاً جداً للقرائة */
+            color: var(--text-muted); 
             font-size: 16px;
             font-weight: 500;
+        }
+
+        /* الأقسام الإضافية الجديدة للسكرول */
+        .section-padding {
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--primary-color);
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            margin: 10px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        /* تنسيق قسم "لماذا X خيارك الأفضل" */
+        .why-choose-us {
+            background-color: var(--bg-white);
+        }
+
+        .why-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .why-card {
+            background-color: var(--bg-light);
+            padding: 40px 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .why-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .why-card .icon-number {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px auto;
+        }
+
+        .why-card h3 {
+            color: var(--primary-color);
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        /* تنسيق قسم الأسئلة الشائعة */
+        .faq-section {
+            background-color: var(--bg-light);
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .faq-item {
+            background-color: var(--bg-white);
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            border-right: 5px solid var(--primary-color);
+        }
+
+        .faq-question {
+            font-size: 19px;
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .faq-question::before {
+            content: "؟";
+            color: var(--secondary-color);
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .faq-answer {
+            color: var(--text-muted);
+            font-size: 16px;
+            font-weight: 500;
+            text-align: justify;
+        }
+
+        .faq-answer p {
+            margin-bottom: 10px;
+        }
+        
+        .faq-answer p:last-child {
+            margin-bottom: 0;
         }
 
         /* الفوتر (تذييل الصفحة) */
@@ -192,9 +319,8 @@
             background-color: #07162b;
             color: rgba(255, 255, 255, 0.7);
             text-align: center;
-            padding: 20px;
+            padding: 25px;
             font-size: 14px;
-            margin-top: 40px;
         }
 
         /* التوافق مع الشاشات الصغيرة */
@@ -213,6 +339,9 @@
                 width: 100%;
                 max-width: 280px;
             }
+            .section-title {
+                font-size: 26px;
+            }
         }
     </style>
 </head>
@@ -224,7 +353,8 @@
             <a href="#" class="logo">موقع <span>X</span></a>
             <ul class="nav-links">
                 <li><a href="#">الرئيسية</a></li>
-                <li><a href="#">تصفح المشاريع</a></li>
+                <li><a href="#why-x">لماذا نحن؟</a></li>
+                <li><a href="#faq">الأسئلة الشائعة</a></li>
                 <li><a href="#">من نحن</a></li>
             </ul>
             <a href="#" class="btn-login">دخول / تسجيل</a>
@@ -241,7 +371,7 @@
         </div>
     </section>
 
-    <!-- قسم المميزات السريعة -->
+    <!-- قسم المميزات السريعة السطحي -->
     <section class="features">
         <div class="feature-box">
             <h3>كفاءات عربية مميزة</h3>
@@ -254,6 +384,65 @@
         <div class="feature-box">
             <h3>دعم محلي مستمر</h3>
             <p>فريق دعم فني متكامل متواجد لخدمتك ومساعدتك في إنجاح أعمالك وتسهيل طرق الدفع المحلية والعالمية.</p>
+        </div>
+    </section>
+
+    <!-- قسم محتوى إضافي: لماذا X خيارك الأفضل -->
+    <section id="why-x" class="section-padding why-choose-us">
+        <h2 class="section-title">لماذا X خيارك الأفضل لنشر أعمالك؟</h2>
+        <div class="why-grid">
+            <div class="why-card">
+                <div class="icon-number">١</div>
+                <h3>مرونة وسهولة مطلقة</h3>
+                <p>انشر عملك الحر بالسهولة و المرونة التي تبحث عنها بدون أي تعقيدات.</p>
+            </div>
+            <div class="why-card">
+                <div class="icon-number">٢</div>
+                <h3>أسعار تنافسية</h3>
+                <p>اعرض عملك الحر بأسعار رمزية تلائم الجميع وتضمن انتشاراً أوسع.</p>
+            </div>
+            <div class="why-card">
+                <div class="icon-number">٣</div>
+                <h3>خدمات احترافية</h3>
+                <p>مقدمو خدمات محترفون يمتلكون المهارة والخبرة لتلبية تطلعاتك بدقة عالية.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الأسئلة الشائعة -->
+    <section id="faq" class="section-padding faq-section">
+        <h2 class="section-title">الأسئلة الشائعة</h2>
+        <div class="faq-container">
+            
+            <div class="faq-item">
+                <div class="faq-question">ما هو X ؟</div>
+                <div class="faq-answer">
+                    هي منصة عربية تتيح لأصحاب الخدمات و الاعمال الحرة نشر مختلف انواع الخدمات و تمكن العملاء من استكشاف هذه الخدمات بكل سهولة من خلال منصة واحدة فقط.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">كيف استفيد من X ؟</div>
+                <div class="faq-answer">
+                    يمكن الاستفادة من منصة X ، سواء كنت مقدم خدمة او باحثًا عنها ، حيث ان منصة X تتيح لك حرية عرض و استكشاف الخدمات بكل سهولة لانها منصة مختصة بالخدمات.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">ما نتيجة نشر المشاريع على X ؟</div>
+                <div class="faq-answer">
+                    <p>تتيح لك منصة X إضافة خدماتك واستقبال طلبات من العملاء المهتمين، ثم التواصل المباشر معهم للاتفاق على جميع تفاصيل المشروع، ومتابعة التنفيذ حتى اكتماله بالشكل المطلوب.</p>
+                    <p>كما يمكنك، بصفتك عميلاً، استعراض الخدمات المتوفرة على المنصة والبحث عن الأنسب لاحتياجاتك، ثم التواصل مع مقدم الخدمة لإتمام أعمالك بكفاءة وجودة عالية.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">ما الفئة المستهدفة من X ؟</div>
+                <div class="faq-answer">
+                    تستهدف منصة إكس جميع فئات المجتمع من خلال تقديم مجموعة متنوعة من الخدمات التي تلبي احتياجات الطلاب وعامة الأفراد. وتشمل المنصة خدمات متعددة في مختلف المجالات، مثل الخدمات التعليمية، والتطوعية، والإرشادية، والتجارية، والصحية، والتقنية، وخدمات النقل، بالإضافة إلى خدمات العمل الحر، بما يسهم في توفير حلول متكاملة تلائم احتياجات المستخدمين المختلفة.
+                </div>
+            </div>
+
         </div>
     </section>
 
