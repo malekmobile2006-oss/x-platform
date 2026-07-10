@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>المنصة الأردنية للأعمال الحرة | X</title>
+    <title>المنصة العربية للأعمال الحرة | X</title>
     <style>
         /* إعدادات الخطوط والألوان العامة */
         @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap');
@@ -11,7 +11,8 @@
         :root {
             --primary-color: #0b2240; /* أزرق داكن فخم */
             --secondary-color: #ce9e22; /* ذهبي/أصفر ملكي */
-            --text-dark: #333;
+            --text-dark: #222222; /* تم تغميقه لزيادة الوضوح */
+            --text-muted: #444444; /* تم تغميقه ليكون واضحاً جداً في البوكسات */
             --text-light: #fff;
             --bg-light: #f4f7f6;
         }
@@ -68,7 +69,7 @@
         .nav-links a {
             text-decoration: none;
             color: var(--text-dark);
-            font-weight: 600;
+            font-weight: 700; /* تم زيادة السمك ليكون أوضح */
             transition: color 0.3s;
         }
 
@@ -158,7 +159,7 @@
             margin: -40px auto 60px auto;
             padding: 0 20px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 11fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
             position: relative;
             z-index: 10;
@@ -168,7 +169,7 @@
             background: var(--text-light);
             padding: 30px;
             border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* تم زيادة الظل قليلاً للبروز */
             text-align: center;
             border-top: 4px solid var(--secondary-color);
         }
@@ -177,11 +178,13 @@
             color: var(--primary-color);
             margin-bottom: 15px;
             font-size: 20px;
+            font-weight: 700;
         }
 
         .feature-box p {
-            color: #666;
-            font-size: 15px;
+            color: var(--text-muted); /* أصبح اللون هنا غامقاً وواضحاً جداً للقرائة */
+            font-size: 16px;
+            font-weight: 500;
         }
 
         /* الفوتر (تذييل الصفحة) */
@@ -197,7 +200,7 @@
         /* التوافق مع الشاشات الصغيرة */
         @media (max-width: 768px) {
             .nav-links {
-                display: none; /* لإبقاء التصميم بسيطاً مبدئياً على الموبايل */
+                display: none;
             }
             .hero h1 {
                 font-size: 32px;
@@ -222,7 +225,6 @@
             <ul class="nav-links">
                 <li><a href="#">الرئيسية</a></li>
                 <li><a href="#">تصفح المشاريع</a></li>
-                <li><a href="#">ابحث عن مستقل</a></li>
                 <li><a href="#">من نحن</a></li>
             </ul>
             <a href="#" class="btn-login">دخول / تسجيل</a>
@@ -231,10 +233,10 @@
 
     <!-- القسم الرئيسي للترحيب -->
     <section class="hero">
-        <h1>المنصة الأردنية للأعمال الحرة</h1>
-        <p>بوابتك الذكية للوصول إلى أفضل الكفاءات والمهارات الأردنية، أو للانطلاق بمسيرتك المهنية كمستقل في سوق العمل الحر.</p>
+        <h1>المنصة العربية للأعمال الحرة</h1>
+        <p>بوابتك الذكية للوصول إلى أفضل الكفاءات والمهارات العربية، أو للانطلاق بمسيرتك المهنية كمستقل في سوق العمل الحر.</p>
         <div class="cta-buttons">
-            <a href="#" class="btn-main">ابدأ الآن كمستقل</a>
+            <a href="#" class="btn-main">ابدأ كـ ضيّف</a>
             <a href="#" class="btn-sub">أضف مشروعاً جديداً</a>
         </div>
     </section>
@@ -242,12 +244,12 @@
     <!-- قسم المميزات السريعة -->
     <section class="features">
         <div class="feature-box">
-            <h3>كفاءات أردنية مميزة</h3>
+            <h3>كفاءات عربية مميزة</h3>
             <p>تضم المنصة نخبة من المبرمجين، المصممين، المترجمين، وصنّاع المحتوى الجاهزين لتنفيذ مشاريعك باحترافية.</p>
         </div>
         <div class="feature-box">
             <h3>بيئة آمنة وموثوقة</h3>
-            <p>نضمن لك حقوقك المالية والتعاقدية بشكل كامل خلال كافة مراحل تنفيذ المشروع وحتى التسليم النهائي.</p>
+            <p>توفر لك المنصة حقوق النشر للأعمال الحرة الخاصة لك، في بيئة مليئة بالفرص.</p>
         </div>
         <div class="feature-box">
             <h3>دعم محلي مستمر</h3>
@@ -257,7 +259,7 @@
 
     <!-- الفوتر -->
     <footer>
-        <p>&copy; 2026 جميع الحقوق محفوظة - المنصة الأردنية للأعمال الحرة (موقع X)</p>
+        <p>&copy; 2026 جميع الحقوق محفوظة - المنصة العربية للأعمال الحرة (موقع X)</p>
     </footer>
 
 </body>
